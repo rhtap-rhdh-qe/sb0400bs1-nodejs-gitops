@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: sb0400bs1-nodejs-gitops
+  description: This is GitOps manifest for sb0400bs1-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: sb0400bs1-nodejs
+    janus-idp.io/tekton: sb0400bs1-nodejs 
+    backstage.io/kubernetes-id: sb0400bs1-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:sb0400bs1-nodejs
